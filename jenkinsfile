@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    environment {
+        SONARQUBE_SERVER = 'sonarqube-server'
+        SONARQUBE_PROJECT_KEY = 'TalibiMart'
+        SONARQUBE_LOGIN_TOKEN = 'sonarqube-token'
+        SONARQUBE_HOST_URL = 'http://localhost:9000'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/AbderrahimTalibi/TalibiMart'
+            }
+        }
+
+        stage('Code Analysis') {
+            steps {
+                withSonarQubeEnv(installationName: "${SONARQUBE_SERVER}") {
+                    sh """
+                        ${tool 'SonarScanner'}/bin/sonar-scanner \\
+                        -Dsonar.projectKey=${SONARQUBE_PROJECT_KEY} \\
+                        -Dsonar.sources=. \\
+                        -Dsonar.host.url=${SONARQUBE_HOST_URL} \\
+                        -Dsonar.login=${SONARQUBE_LOGIN_TOKEN}
+                    """
+                }
+            }
+        }
+    }
+}
