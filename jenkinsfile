@@ -11,10 +11,20 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/AbderrahimTalibi/TalibiMart'
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/AbderrahimTalibi/TalibiMart.git'
+                    ]]
+                ])
             }
         }
+        // stage('Checkout') {
+        //     steps {
+        //         git branch: 'main',
+        //             url: 'https://github.com/AbderrahimTalibi/TalibiMart'
+        //     }
+        // }
 
         stage('Code Analysis') {
             steps {
