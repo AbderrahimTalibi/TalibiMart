@@ -5,7 +5,7 @@ pipeline {
         SONARQUBE_SERVER = 'sonarqube-server'
         SONARQUBE_PROJECT_KEY = 'TalibiMart'
         SONARQUBE_LOGIN_TOKEN = 'sqa_62ac603487099025347e13fdc26be9917b42e872'
-        SONARQUBE_HOST_URL = 'http://172.17.0.21:9000'
+        SONARQUBE_HOST_URL = 'http://sonarqube:9000'
     }
 
     stages {
