@@ -6,7 +6,7 @@ pipeline {
         SONARQUBE_PROJECT_KEY = 'TalibiMart'
         SONARQUBE_LOGIN_TOKEN = 'sqa_f75f65762c06763e9bb20a4100678bc3edd675a9'
         SONARQUBE_HOST_URL = 'http://sonarqube:9000'
-        DOCKER_IMAGE = 'TalibiMart'
+        DOCKER_IMAGE = 'talibimart'
         DOCKER_TAG = 'latest'
     }
 
