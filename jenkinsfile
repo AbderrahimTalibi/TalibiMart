@@ -4,7 +4,7 @@ pipeline {
     environment {
         SONARQUBE_SERVER = 'sonarqube-server'
         SONARQUBE_PROJECT_KEY = 'TalibiMart'
-        SONARQUBE_LOGIN_TOKEN = 'sqa_f75f65762c06763e9bb20a4100678bc3edd675a9'
+        SONARQUBE_LOGIN_TOKEN = 'sqa_8f3217d58aa16bc0653c6b4f4439953f901548d6'
         SONARQUBE_HOST_URL = 'http://sonarqube:9000'
         DOCKER_IMAGE = 'talibimart'
         DOCKER_TAG = 'latest'
