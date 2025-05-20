@@ -52,7 +52,7 @@ pipeline {
 
         stage('Notify') {
             steps {
-                mail to: 'abderrahimtalibi0gmail.com',
+                mail to: 'abderrahimtalibi0@gmail.com',
                     subject: "New Release Deployed",
                     body: """\
                 Hello,
