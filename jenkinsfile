@@ -49,5 +49,20 @@ pipeline {
                 }
             }
         }
+
+        stage('Notify') {
+            steps {
+                mail to: 'abderrahimtalibi0gmail.com',
+                    subject: "New Release Deployed",
+                    body: """\
+                Hello,
+
+                A new release of the project has been successfully pushed to production.
+
+                Best regards,
+                Jenkins
+                 """
+            }
+        }
     }
 }
